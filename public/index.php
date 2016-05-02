@@ -8,7 +8,8 @@ if (PHP_SAPI == 'cli-server') {
     }
 }
 
-define('DEVENV', true);
+define('DEVENV', true); // You must remove this line in production
+
 define('PUBDIR', __DIR__);
 define('SYSDIR', __DIR__ . '/../');
 define('APPDIR', SYSDIR . '/app');

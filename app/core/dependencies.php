@@ -6,7 +6,7 @@ $container = $app->getContainer();
 
 // View renderer
 $container['view'] = function ($c) {
-    $config = $c->get('config')['views'];
+    $config = $c->get('settings')['views'];
     $view = new \Slim\Views\Twig($config['path'], [
         'cache' => $config['cache']
     ]);
@@ -26,7 +26,7 @@ $container['view'] = function ($c) {
 
 // Monolog
 $container['logger'] = function ($c) {
-    $config = $c->get('config')['logger'];
+    $config = $c->get('settings')['logger'];
     $logger = new Monolog\Logger($config['name']);
     $logger->pushProcessor(new Monolog\Processor\UidProcessor());
     $logger->pushHandler(new Monolog\Handler\StreamHandler($config['path'], Monolog\Logger::DEBUG));

@@ -1,6 +1,6 @@
 <?php
 return [
-    'config' => [
+    'settings' => [
         'displayErrorDetails' => (defined('DEVENV') && DEVENV ? true : false),
 
         // View settings
